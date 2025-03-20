@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodes.c                                            :+:      :+:    :+:   */
+/*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 14:45:51 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/20 14:51:52 by yevkahar         ###   ########.fr       */
+/*   Created: 2025/03/12 15:25:59 by yevkahar          #+#    #+#             */
+/*   Updated: 2025/03/20 14:32:16 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*create_node(int data)
+t_stack_node *parce_all(char **argv)
 {
-	t_stack_node	*node;
+    t_stack_node *a;
+    int i;
 
-	node = malloc(sizeof(t_stack_node));
-	if (!node)
-		return (NULL);
-	node->data = data;
-	node->prev = NULL;
-	node->next = NULL;
-	node->ms = NULL;
-	return (node);
+    a = NULL;
+    i = 0;
+    while (argv[i])
+    {
+        if (i == 0)
+            lstnew(argv[i]);
+        else
+            lstadd_last(a, atoi(argv[i]));	
+    }
+    return (a);
 }

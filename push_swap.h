@@ -23,12 +23,13 @@
 #  define BUFFER_SIZE 42
 # endif
 
-typedef struct	s_stack_node
+typedef struct	s_stack
 {
 	int					data;
-	struct s_stack_node	*prev;
-	struct s_stack_node	*next;
-	struct s_stack_node	*target;
+	struct s_stack		*prev;
+	struct s_stack		*next;
+	struct s_stack		*ms;
+	struct s_stack		*next;
 }				t_stack_node;
 
 // main
