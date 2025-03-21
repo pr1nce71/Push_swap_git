@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 15:58:12 by yevkahar          #+#    #+#             */
+/*   Updated: 2025/03/21 15:58:14 by yevkahar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack_node	*lstnew(void *data)
@@ -30,20 +42,20 @@ t_stack_node	*lstlast(t_stack_node *lst)
 	return (lst);
 }
 
-t_stack_node    *lstadd_last(t_stack_node **lst, t_stack_node *new)
+t_stack_node	*lstadd_last(t_stack_node **lst, t_stack_node *new)
 {
-    t_stack_node	*last;
+	t_stack_node	*last;
 
-    if (!new)
-        return (NULL);
-    if (!*lst)
-    {
-        *lst = new;
-        return (*lst);
-    }
-    last = lstlast(*lst);
-    last ->next = new;
-    return (new);
+	if (!new)
+		return (NULL);
+	if (!*lst)
+	{
+		*lst = new;
+		return (*lst);
+	}
+	last = lstlast(*lst);
+	last ->next = new;
+	return (new);
 }
 
 int	atoi(const char *str)
