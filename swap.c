@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:34:02 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 16:02:57 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:03:47 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	swap(t_stack_node **stack)
 {
-	t_stack_node	*first;
-	t_stack_node	*second;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
 	if (!*stack || !(*stack) ->next)
 		return ;
-	first = *stack;
-	second = (*stack) ->next;
-	first ->next = second ->next;
-	if (second->next)
-		second ->next ->prev = first;
-	second ->next = NULL;
-	second ->prev = first;
-	*stack = second;
+	a = *stack;
+	b = (*stack) ->next;
+	a ->next = b ->next;
+	if (b->next)
+		b ->next ->prev = a;
+	b ->next = NULL;
+	b ->prev = a;
+	*stack = b;
 }
 
 void	sa(t_stack_node **a)

@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 16:37:12 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:19:39 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@
 typedef struct s_stack
 {
 	int					data;
-	struct s_stack		*ms;
+	int					index;
+	int					primary_cost;
+	int					target_number;
+	int					secondary_cost;
 	struct s_stack		*prev;
 	struct s_stack		*next;
 }				t_stack_node;
@@ -61,10 +64,15 @@ char			*my_strcpy(char *s1, const char *s2);
 t_stack_node	*parse_all(char **argv);
 //push
 void			push(t_stack_node **dst, t_stack_node **src);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **a, t_stack_node **b);
 //swap
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
 void			ss(t_stack_node **a, t_stack_node **b);
 void			swap(t_stack_node **stack);
 //rotate
+//sort
+void			stack_lenght(t_stack_node *stack);
+
 #endif
