@@ -6,7 +6,7 @@
 #    By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/20 14:01:42 by yevkahar          #+#    #+#              #
-#    Updated: 2025/03/25 13:17:43 by yevkahar         ###   ########.fr        #
+#    Updated: 2025/03/25 13:40:27 by yevkahar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS	=	parsing.c\
 			sort.c\
 			nodes.c\
 			main.c\
-			errors.c
+			error.c\
+			error_utils.c\
 			
 			
 
