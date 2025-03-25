@@ -6,11 +6,11 @@
 #    By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/20 14:01:42 by yevkahar          #+#    #+#              #
-#    Updated: 2025/03/25 13:40:27 by yevkahar         ###   ########.fr        #
+#    Updated: 2025/03/25 14:49:48 by yevkahar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=   push_swap.a
+NAME	=   push_swap
 SRCS	=	parsing.c\
 			gnl.c\
 			gnl_utils.c\
@@ -18,7 +18,7 @@ SRCS	=	parsing.c\
 			swap.c\
 			push.c\
 			rotate.c\
-			reve_rotate.c\
+			rev_rotate.c\
 			sort.c\
 			nodes.c\
 			main.c\
@@ -29,7 +29,7 @@ SRCS	=	parsing.c\
 
 
 OBJS	= $(SRCS:.c=.o)
-
+CC 		= gcc
 RM		= rm -f
 LIBC	= ar -rcs
 FLAGS	= -Wall -Wextra -Werror
@@ -48,8 +48,7 @@ clean:
 	$(RM) -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(bonus)
-
+	$(RM) $(NAME)
 re: fclean all
 
 .PHONY: all clean fclean re .c.o

@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:59:13 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 13:34:38 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:14:43 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,19 @@ int	main(int argc, char **av)
 	b = NULL;
 	if (argc < 2)
 		return (1);
-	if (!check_for_errors(av));
+	if (!check_for_errors(av))
+	{
 		error_exit();
+		return (1);
+	}
 	a = parse_all(av);
 	if (!a)
+	{
 		error_exit();
+		return (1);
+	}
+	free(a);
+	free(b);
 	return (0);
 }
 // errors through write(2, "Error\n", 6);
