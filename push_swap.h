@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 13:52:33 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:05:46 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h> // INT_MAX, INT_MIN
-# include <stdbool.h> // bool, true, false
+# include <limits.h> // INT_MAX, MIN
+# include <stdbool.h> // true, false
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -58,5 +58,7 @@ char			*my_strjoin(char *s1, const char *s2);
 char			*my_strcpy(char *s1, const char *s2);
 //parser
 t_stack_node	*parse_all(char **argv);
-// str 
+//push
+void			push(t_stack_node **dst, t_stack_node **src);
+//rotate
 #endif
