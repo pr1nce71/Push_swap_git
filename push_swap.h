@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 14:05:46 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:37:12 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ t_stack_node	*create_node(int data);
 t_stack_node	*lstlast(t_stack_node *lst);
 t_stack_node	*lstadd_last(t_stack_node **lst, t_stack_node *new);
 t_stack_node	*insert_node(t_stack_node *head, int data, int target_index);
-//errors
-int				is_digit(int c);
-int				valid_int(char *str);
+//error
 int				check_empty(char *str);
 int				check_format(char *str);
-int				check_for_errors(char **av);
 int				check_signs(char *str, int *i);
+//error utils
+int				is_digit(int c);
+int				valid_int(char *str);
+int				check_for_errors(char **av);
 int				has_duplicate(char **av, int current);
 void			error_exit(void);
 //gnl
@@ -60,5 +61,10 @@ char			*my_strcpy(char *s1, const char *s2);
 t_stack_node	*parse_all(char **argv);
 //push
 void			push(t_stack_node **dst, t_stack_node **src);
+//swap
+void			sa(t_stack_node **a);
+void			sb(t_stack_node **b);
+void			ss(t_stack_node **a, t_stack_node **b);
+void			swap(t_stack_node **stack);
 //rotate
 #endif
