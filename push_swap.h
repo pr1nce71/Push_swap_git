@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 18:19:39 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:41:43 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,10 @@ void			ss(t_stack_node **a, t_stack_node **b);
 void			swap(t_stack_node **stack);
 //rotate
 //sort
-void			stack_lenght(t_stack_node *stack);
-
+int				stack_lenght(t_stack_node *stack);
+void			set_index(t_stack_node *stack);
+void			calculate_fcost(t_stack_node *stack);
+int				find_min_index(t_stack_node *stack);
+void			find_target_position(t_stack_node *stack_a, t_stack_node *stack_b);
+//main sort
 #endif
