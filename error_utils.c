@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.utils.c                                      :+:      :+:    :+:   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:25:17 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 13:34:55 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:08:02 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,19 @@ int	valid_int(char *str)
 	return (num >= INT_MIN && num <= INT_MAX);
 }
 
-
 int	check_for_errors(char **av)
 {
 	int	i;
-	
+
 	i = 1;
 	while (av[i])
 	{
 		if (check_format(av[i]) == 0)
-		return (0);
+			return (0);
 		if (has_duplicate(av, i))
-		return (0);
+			return (0);
 		if (!valid_int(av[i]))
-		return (0);
+			return (0);
 		i++;
 	}
 	return (1);

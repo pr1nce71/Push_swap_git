@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:55 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 16:44:02 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:01:18 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	push(t_stack_node **dst, t_stack_node **src)
 {
 	t_stack_node	*temp;
-//	t_stack_node	*a;
-//	t_stack_node	*b; 
-	
+
 	if (!*src)
 		return ;
 	temp = *src;

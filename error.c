@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:34:23 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 13:32:49 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:00:36 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	check_empty(char *str)
 	while (str[i] && (str[i] == ' ' || str[i] == '\t'))
 		i++;
 	if (!str[i])
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }
 
 int	check_signs(char *str, int *i)
@@ -30,9 +30,9 @@ int	check_signs(char *str, int *i)
 	{
 		(*i)++;
 		if (!str[*i] || !is_digit(str[*i]))
-			return(0);
+			return (0);
 	}
-	return(1);
+	return (1);
 }
 
 int	check_format(char *str)
@@ -41,14 +41,14 @@ int	check_format(char *str)
 
 	i = 0;
 	if (check_empty(str))
-		return(0);
+		return (0);
 	if (!check_signs(str, &i))
-		return(0);
+		return (0);
 	while (str[i])
 	{
 		if (!is_digit(str[i]))
-			return(0);
+			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }

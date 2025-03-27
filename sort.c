@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:33:58 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/26 16:44:44 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:06:20 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	set_index(t_stack_node *stack)
 			if (temp ->data == smallest && temp ->index == -1)
 			{
 				temp->index = index;
-				break;
+				break ;
 			}
 			temp = temp ->next;
 		}
@@ -59,7 +59,7 @@ void	set_index(t_stack_node *stack)
 	}
 }
 
-void	calculate_fcost(t_stack_node *stack)
+void	calculate_first_cost(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	int				size;
@@ -82,13 +82,13 @@ int	find_min_index(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	int				min_index;
-	
+
 	current = stack;
 	min_index = current->index;
 	while (current)
 	{
 		if (current->index < min_index)
-		min_index = current->index;
+			min_index = current->index;
 		current = current->next;
 	}
 	return (min_index);
@@ -108,7 +108,7 @@ void	find_target_position(t_stack_node *stack_a, t_stack_node *stack_b)
 		current_a = stack_a;
 		while (current_a)
 		{
-			if (current_a->index > current_b->index 
+			if (current_a->index > current_b->index
 				&& current_a->index < target_index)
 			{
 				target_index = current_a->index;

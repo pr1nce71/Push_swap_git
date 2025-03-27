@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:45:51 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/21 16:36:22 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/03/27 15:33:34 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_stack_node	*create_node(int data)
 	node->data = data;
 	node->prev = NULL;
 	node->next = NULL;
-	node->ms = NULL;
 	return (node);
 }
 
