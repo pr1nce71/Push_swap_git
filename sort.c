@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:33:58 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/27 16:06:20 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:20:00 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,6 @@ void	calculate_first_cost(t_stack_node *stack)
 	}
 }
 
-static int	max(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-static int	pos(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
-
 void	calculate_last_cost(t_stack_node *stack_b)
 {
 	t_stack_node	*current;
@@ -65,32 +51,39 @@ void	calculate_last_cost(t_stack_node *stack_b)
 	}
 }
 
-void	find_target_position(t_stack_node *stack_a, t_stack_node *stack_b)
+static int	max(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+static int	pos(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+int	find_target_index(t_stack_node *stack_a, int b_index)
 {
 	t_stack_node	*current_a;
-	t_stack_node	*current_b;
 	int				target_pos;
 	int				target_index;
 
-	current_b = stack_b;
-	while (current_b)
+	target_index = INT_MAX;
+	current_a = stack_a;
+	while (current_a)
 	{
-		target_index = INT_MAX;
-		current_a = stack_a;
-		while (current_a)
+		if (current_a->index > b_index
+			&& current_a->index < target_index)
 		{
-			if (current_a->index > current_b->index
-				&& current_a->index < target_index)
-			{
-				target_index = current_a->index;
-				target_pos = current_a->index;
-			}
-			current_a = current_a->next;
+			target_index = current_a->index;
+			target_pos = current_a->index;
 		}
-		if (target_index == INT_MAX)
-			current_b->target_number = find_min_index(stack_a);
-		else
-			current_b->target_number = target_pos;
-		current_b = current_b->next;
+		current_a = current_a->next;
 	}
+	if (target_index == INT_MAX)
+		return (find_min_index(stack_a));
+	return (target_pos);
 }

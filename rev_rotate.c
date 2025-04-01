@@ -6,13 +6,13 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:33:53 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/04/01 13:43:56 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:03:43 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rev_rotate(t_stack_node **          stack)
+void	rev_rotate(t_stack_node **stack)
 {
 	t_stack_node	*last;
 	t_stack_node	*pre_last;

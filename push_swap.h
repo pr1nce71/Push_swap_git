@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/04/01 13:50:25 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:18:38 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,10 @@ int				find_min_index(t_stack_node *stack);
 void			find_cheapest_node(t_stack_node *stack);
 //sort
 void			calculate_first_cost(t_stack_node *stack);
+void			calculate_last_cost(t_stack_node *stack_b);
+int				find_target_index(t_stack_node *stack_a, int b_index);
+//main sort
+void			push_to_b(t_stack_node **a, t_stack_node **b);
 void			find_target_position(t_stack_node *stack_a,
 					t_stack_node *stack_b);
-void			calculate_last_cost(t_stack_node *stack_b);
-//main sort
 #endif
