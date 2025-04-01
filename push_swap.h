@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/27 16:02:27 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 13:30:59 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char			*my_strdup_gnl(const char *s);
 char			*my_strchr(const char *s, int c);
 char			*my_strjoin(char *s1, const char *s2);
 char			*my_strcpy(char *s1, const char *s2);
-//parser
+//parsing
 t_stack_node	*parse_all(char **argv);
 //push
 void			push(t_stack_node **dst, t_stack_node **src);
@@ -76,10 +76,13 @@ void			rotate(t_stack_node **stack);
 void			ra(t_stack_node **a);
 void			rb(t_stack_node **b);
 void			rr(t_stack_node **a, t_stack_node **b);
+//rev rotate
+void			rev_rotate(t_stack_node **stack);
 //sort utils
 int				stack_lenght(t_stack_node *stack);
 void			set_index(t_stack_node *stack);
 int				find_min_index(t_stack_node *stack);
+void			find_cheapest_node(t_stack_node *stack);
 //sort
 void			calculate_first_cost(t_stack_node *stack);
 void			find_target_position(t_stack_node *stack_a,

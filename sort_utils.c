@@ -65,5 +65,10 @@ int	find_min_index(t_stack_node *stack)
 
 void    find_cheapest_node(t_stack_node *stack)
 {
-    
+    t_stack_node	*current;
+	t_stack_node	*cheapest;
+	int				min_index;
+
+	current = stack;
+	
 }
