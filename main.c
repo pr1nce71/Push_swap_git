@@ -11,22 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// For Parser:
-// 1. Check the arguments for errors.
-// t_stack_node	*parser(char **av)
-// {
-// 	t_stack_node *a = NULL;
-// 	int i = 0;
-
-// 	while (av[i])
-// 	{
-// 		if (i == 0)
-// 			lstnew(av[i]);
-// 		else
-// 			lst_add_back(a, atoi(av[i]));	
-// 	}
-// 	return (a);
-// }
 
 /*
 stack_b_cheapest_node = find_cheapest_node(stack_b);

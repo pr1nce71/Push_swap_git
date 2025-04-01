@@ -12,53 +12,6 @@
 
 #include "push_swap.h"
 
-int	stack_lenght(t_stack_node *stack)
-{
-	int	i;
-
-	i = 0;
-	while (stack)
-	{
-		stack = stack ->next;
-		i++;
-	}
-	return (i);
-}
-
-void	set_index(t_stack_node *stack)
-{
-	t_stack_node	*temp;
-	t_stack_node	*current;
-	int				index;
-	int				smallest;
-
-	index = 0;
-	current = stack;
-	while (current)
-	{
-		smallest = INT_MAX;
-		temp = stack;
-		while (temp)
-		{
-			if (temp ->data < smallest && temp ->index == -1)
-				smallest = temp ->data;
-			temp = temp ->next;
-		}
-		temp = stack;
-		while (temp)
-		{
-			if (temp ->data == smallest && temp ->index == -1)
-			{
-				temp->index = index;
-				break ;
-			}
-			temp = temp ->next;
-		}
-		index++;
-		current = current ->next;
-	}
-}
-
 void	calculate_first_cost(t_stack_node *stack)
 {
 	t_stack_node	*current;
@@ -78,20 +31,38 @@ void	calculate_first_cost(t_stack_node *stack)
 	}
 }
 
-int	find_min_index(t_stack_node *stack)
+static int	max(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+static int	pos(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+void	calculate_last_cost(t_stack_node *stack_b)
 {
 	t_stack_node	*current;
-	int				min_index;
+	int				final_cost;
 
-	current = stack;
-	min_index = current->index;
+	current = stack_b;
 	while (current)
 	{
-		if (current->index < min_index)
-			min_index = current->index;
+		if (current->primary_cost >= 0 && current->final_cost >= 0)
+			final_cost = max(current->primary_cost, current->final_cost);
+		else if (current->primary_cost < 0 && current->final_cost < 0)
+			final_cost = max(pos(current->primary_cost),
+					pos(current->final_cost));
+		else
+			final_cost = pos(current->primary_cost) + pos(current->final_cost);
+		current->final_cost = final_cost;
 		current = current->next;
 	}
-	return (min_index);
 }
 
 void	find_target_position(t_stack_node *stack_a, t_stack_node *stack_b)

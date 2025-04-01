@@ -76,13 +76,14 @@ void			rotate(t_stack_node **stack);
 void			ra(t_stack_node **a);
 void			rb(t_stack_node **b);
 void			rr(t_stack_node **a, t_stack_node **b);
-//sort
+//sort utils
 int				stack_lenght(t_stack_node *stack);
 void			set_index(t_stack_node *stack);
-void			calculate_first_cost(t_stack_node *stack);
 int				find_min_index(t_stack_node *stack);
+//sort
+void			calculate_first_cost(t_stack_node *stack);
 void			find_target_position(t_stack_node *stack_a,
 					t_stack_node *stack_b);
-//main sort
 void			calculate_last_cost(t_stack_node *stack_b);
+//main sort
 #endif
