@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/04/01 16:18:38 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:34:47 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void			rra(t_stack_node **a);
 void			rrb(t_stack_node **b);
 void			rrr(t_stack_node **a, t_stack_node **b);
 //sort utils
-int				stack_lenght(t_stack_node *stack);
+int				stack_length(t_stack_node *stack);
 void			set_index(t_stack_node *stack);
 int				find_min_index(t_stack_node *stack);
 void			find_cheapest_node(t_stack_node *stack);

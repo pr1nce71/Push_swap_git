@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:33:58 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/04/01 16:20:00 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:34:47 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	calculate_first_cost(t_stack_node *stack)
 	int				size;
 	int				pivot;
 
-	size = stack_lenght(stack);
+	size = stack_length(stack);
 	pivot = size / 2;
 	current = stack;
 	while (current)

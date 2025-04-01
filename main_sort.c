@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 18:16:27 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/04/01 16:20:11 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:34:47 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push_to_b(t_stack_node **a, t_stack_node **b)
 	int				pivot;
 	int				pushed;
 
-	size = stack_lenght(*a);
+	size = stack_length(*a);
 	pivot = size / 2;
 	pushed = 0;
 	current = *a;
@@ -34,7 +34,7 @@ void	push_to_b(t_stack_node **a, t_stack_node **b)
 			ra(a);
 		current = *a;
 	}
-	while (stack_lenght(*a) > 3)
+	while (stack_length(*a) > 3)
 		pb(a, b);
 }
 

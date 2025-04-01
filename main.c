@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:59:13 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/03/25 18:03:59 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:57:40 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ while (stack_b_cheapest_node->data != stack_b->data)
 	else
 		rrb(&stack_b);
 }
-stack_a_target_node = find_target_node(stack_a, stack_b_cheapest_node->target_number);
+stack_a_target_node = find_target_node(stack_a, 
+								stack_b_cheapest_node->target_number);
 while (stack_a_target_node != stack_a)
 {
 	if (stack_a_target_node->next == stack_a)
