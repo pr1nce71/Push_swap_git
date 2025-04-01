@@ -6,7 +6,7 @@
 /*   By: yevkahar <yevkahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:02:52 by yevkahar          #+#    #+#             */
-/*   Updated: 2025/04/01 13:30:59 by yevkahar         ###   ########.fr       */
+/*   Updated: 2025/04/01 13:50:25 by yevkahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_stack
 	int					primary_cost;
 	int					target_number;
 	int					final_cost;
+	int					cheapest;
 	struct s_stack		*prev;
 	struct s_stack		*next;
 }				t_stack_node;
@@ -78,6 +79,9 @@ void			rb(t_stack_node **b);
 void			rr(t_stack_node **a, t_stack_node **b);
 //rev rotate
 void			rev_rotate(t_stack_node **stack);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 //sort utils
 int				stack_lenght(t_stack_node *stack);
 void			set_index(t_stack_node *stack);

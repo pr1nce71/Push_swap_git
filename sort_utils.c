@@ -67,8 +67,22 @@ void    find_cheapest_node(t_stack_node *stack)
 {
     t_stack_node	*current;
 	t_stack_node	*cheapest;
-	int				min_index;
+	int				lowest_cost;
 
+	if (!stack)
+		return ;
 	current = stack;
-	
+	cheapest = stack;
+	lowest_cost = INT_MAX;
+	while (current)
+	{
+		current->cheapest = 0;
+		if (current->final_cost < lowest_cost)
+		{
+			lowest_cost = current->final_cost;
+			cheapest = current;
+		}
+		current = current->next;
+	}
+	cheapest->cheapest = 1;
 }
